@@ -12,4 +12,4 @@ Seguindo esses 5 conceitos temos:
 - __I__ Interface Segregation
 - __D__ Dependency Inversion
 
-Vamos explicar a fundo e na prática usando diversos exemplo sobre cada um deles e o que eles significam.
+Vamos explicar a fundo e na prática usando diversos exemplos sobre cada um deles e o que eles significam.
