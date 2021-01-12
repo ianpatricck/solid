@@ -24,7 +24,7 @@ E como isso poderia nos ajudar na construção de um software melhor ?
 
 - Menos funcionalidade em uma única classe terá menos dependência.
 
-- Melhora na organização, classes menores e bem organizadas ficam mais faceis de encontrar em um projeto.
+- Melhora na organização, classes menores e bem organizadas ficam mais fáceis de encontrar em um projeto.
 
 Vamos ter uma melhor ideia disto na prática.
 
