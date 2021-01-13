@@ -26,7 +26,7 @@ E como isso poderia nos ajudar na construção de um software melhor ?
 
 - Melhora na organização, classes menores e bem organizadas ficam mais fáceis de encontrar em um projeto.
 
-Vamos ter uma melhor ideia disto na prática.
+Vamos ter uma melhor ideia disso na prática.
 
 ```php
 class Pessoa
@@ -58,12 +58,12 @@ class Pessoa
 
     public function andar()
     {
-        echo "$this->nome está andando";
+        /* ... */
     }
 
     public function correr()
     {
-        echo "$this->nome está correndo";
+        /* ... */
     }
 } 
 ```
@@ -75,19 +75,57 @@ class PessoaAction extends Pessoa
 {
     public function andar()
     {
-        echo "$this->nome está andando";
+        /* ... */
     }
 
     public function correr()
     {
-        echo "$this->nome está correndo";
+        /* ... */
     }
 
     public function pular()
     {
-        echo "$this->nome está pulando";
+        /* ... */
     }
 } 
 ```
 
 Podemos aproveitar essa nova classe criada adicionar todos os métodos (ações no caso) que a classe mãe pode requirir, assim na medida que o projeto crescer, será muito mais fácil identificar o que cada arquivo de classe deve fazer.
+
+## Open/Closed
+
+Simplificando esse princípio, _classes deveriam ser abertas para extensão, mas fechadas para modificação_. Ao fazer isso, paramos de modificar o código existente e causar novos bugs potenciais. Claro, a única exceção à regra é ao consertar bugs no código existente.
+
+Exemplificando:
+
+Imagine que como parte de um novo projeto, nós implementamos uma classe __Carro__.
+
+Ela é bem complexa e com vários atributos e métodos.
+
+```php
+class Carro
+{
+    private $marca;
+    private $modelo;
+    private $vel;
+
+    // Construtores, getters e setters ...
+}
+```
+
+Nós lançamos o projeto e todo mundo aprovou. Entretando, depois de poucos meses, nós decidimos que a classe __Carro__ está um pouco 'vazia' e poderiamos adicionar atributos de carros que tenham funcionalidades únicas.
+
+Nesse caso, abrimos a classe __Carro__ e adicionamos esses atributos, porém, quem sabe quais erros isso pode ocasionar em seu projeto ?
+
+ao invés disso, vamos usar o princípio _Open/Closed_ e simplesmente extender a classe __Carro__.
+
+```php
+class CarroRaro extends Carro
+{
+    private $atributoUnicoDoCarroRaro;
+
+    // Construtores, setters e getters ...
+}
+```
+
+Por extender nossa classe __Carro__ podemos ter certeza nosso projeto não será afetado.
