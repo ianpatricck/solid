@@ -117,7 +117,7 @@ Nós lançamos o projeto e todo mundo aprovou. Entretando, depois de poucos mese
 
 Nesse caso, abrimos a classe __Carro__ e adicionamos esses atributos, porém, quem sabe quais erros isso pode ocasionar em seu projeto ?
 
-ao invés disso, vamos usar o princípio _Open/Closed_ e simplesmente extender a classe __Carro__.
+Ao invés disso, vamos usar o princípio _Open/Closed_ e simplesmente extender a classe __Carro__.
 
 ```php
 class CarroRaro extends Carro
