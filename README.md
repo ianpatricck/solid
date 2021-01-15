@@ -128,4 +128,18 @@ class CarroRaro extends Carro
 }
 ```
 
-Por extender nossa classe __Carro__ podemos ter certeza nosso projeto não será afetado.
+Por extender nossa classe __Carro__ podemos ter certeza que nosso projeto não será afetado.
+
+## Liskov Substitution
+
+O próximo da lista é __Liskov Substitution__, sem dúvidas é o princípio mais complexo dos outros 5. __Se uma classe A é um subtipo da classe B, então nos deveriamos ter capacidade para substituir B com A sem implicar no comportamento do nosso programa__.
+
+Indo direto ao código:
+
+```php
+interface Carro
+{
+    public function ligarMotor();
+    public function acelerar();
+}
+```
