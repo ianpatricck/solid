@@ -143,3 +143,48 @@ interface Carro
     public function acelerar();
 }
 ```
+
+No código acima, definimos uma simples interface chamada __Carro__ com dois métodos que todos os carros deveriam cumprir, ligar o motor e acelerar.
+
+```php
+class Automovel implements Carro
+{
+    private $motor;
+
+    public function __construct(Motor $motor)
+    {
+        $this->motor = $motor;
+    }
+
+    public function ligarMotor()
+    {
+        $this->motor->ligar();
+    }
+
+    public funtion acelerar()
+    {
+        $this->motor->vel(1000);
+    }
+}
+```
+
+Como nosso código descreve, nós temos um motor que podemos ligar e podemos acelerar, através de métodos de uma classe __Motor__ que passamos por injeção de dependência no construtor. Mas, e se quiser adicionar um carro elétrico ?
+
+```php
+class CarroEletrico implements Carro
+{
+    public function ligarMotor()
+    {
+       throw new Exception('Nós não temos um motor');
+    }
+
+    public fnuction acelerar()
+    {
+        // Essa aceleração é uma loucura
+    }
+}
+```
+
+Jogando um carro sem motor dentro de tudo, estamos mudando inerentemente o comportamento do nosso programa. Esta é uma violação flagrante da __substituição de Liskov__ e é um pouco mais difícil de corrigir do que nossos 2 princípios anteriores.
+
+Uma possivel solução deveria ser trabalhar novamente nosso modelo dentro da interface que levam em consideração o estado sem motor do nosso carro.
