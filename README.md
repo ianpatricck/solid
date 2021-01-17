@@ -168,7 +168,7 @@ class Automovel implements Carro
 }
 ```
 
-Como nosso código descreve, nós temos um motor que podemos ligar e podemos acelerar, através de métodos de uma classe __Motor__ que passamos por injeção de dependência no construtor. Mas, e se quiser adicionar um carro elétrico ?
+Como nosso código descreve, nós temos um motor que podemos ligar e podemos acelerar, através de métodos de uma classe __Motor__ que passamos por injeção de dependência no construtor. Mas, e se quisermos adicionar um carro elétrico ?
 
 ```php
 class CarroEletrico implements Carro
