@@ -178,7 +178,7 @@ class CarroEletrico implements Carro
        throw new Exception('Nós não temos um motor');
     }
 
-    public fnuction acelerar()
+    public function acelerar()
     {
         // Essa aceleração é uma loucura
     }
