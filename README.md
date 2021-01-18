@@ -188,3 +188,5 @@ class CarroEletrico implements Carro
 Jogando um carro sem motor dentro de tudo, estamos mudando inerentemente o comportamento do nosso programa. Esta é uma violação flagrante da __substituição de Liskov__ e é um pouco mais difícil de corrigir do que nossos 2 princípios anteriores.
 
 Uma possivel solução deveria ser trabalhar novamente nosso modelo dentro da interface que levam em consideração o estado sem motor do nosso carro.
+
+## Interface Segregation (Segregação de Interface)
