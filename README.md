@@ -233,19 +233,19 @@ interface GenericMover
 }
 ```
 
-Agora, vamos implementas só os metodos que importam pra nós.
+Agora, vamos implementar apenas os métodos que importam pra nós.
 
 ```php
 class Generic implements GenericColocar, GenericGuardar
 {
     public function guardar()
     {
-
+        // ..
     }
 
     public function colocar()
     {
-        
+        // ..
     }
 
     // ...
