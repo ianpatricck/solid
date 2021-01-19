@@ -190,3 +190,66 @@ Jogando um carro sem motor dentro de tudo, estamos mudando inerentemente o compo
 Uma possivel solução deveria ser trabalhar novamente nosso modelo dentro da interface que levam em consideração o estado sem motor do nosso carro.
 
 ## Interface Segregation (Segregação de Interface)
+
+O "I" em __SOLID__ refere-se a interface segregation, e significa que __interfaces maiores devem ser divididas em interfaces menores. Ao fazer isso, garantimos que a implementação de classes só precisam se preocupar apenas com métodos que são do interesse dela.__
+
+Vamos começar com uma interface tratadora de funções genéricas.
+
+```php
+interface Generic
+{
+    public function colocar();
+    public function guardar();
+    public function mover();
+
+    // ...
+}
+```
+
+É bem comum colocar-mos muitos métodos dentro de uma classe, mesmo que não usamos. Com isso nossa classe ficará muito grande e não temos escolha a não ser ir implementando novos métodos.
+
+Vamos consertar isso dividindo nossa longa interface em 3 interfaces separadas.
+
+```php
+interface GenericColocar
+{
+    public function colocar();
+
+    // ...
+}
+
+interface GenericGuardar
+{
+    public function guardar();
+
+    // ...
+}
+
+interface GenericMover
+{
+    public function guardar();
+
+    // ...
+}
+```
+
+Agora, vamos implementas só os metodos que importam pra nós.
+
+```php
+class Generic implements GenericColocar, GenericGuardar
+{
+    public function guardar()
+    {
+
+    }
+
+    public function colocar()
+    {
+        
+    }
+
+    // ...
+}
+```
+
+Poderíamos até mesmo dividir nossa classe __CarroRaro__ de nossos exemplos anteriores para usar a segregação de interfaces da mesma forma. Implementando uma interface de um modelo de carro com uma unica marca.
