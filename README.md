@@ -227,7 +227,7 @@ interface GenericGuardar
 
 interface GenericMover
 {
-    public function guardar();
+    public function mover();
 
     // ...
 }
