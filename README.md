@@ -253,3 +253,72 @@ class Generic implements GenericColocar, GenericGuardar
 ```
 
 Poderíamos até mesmo dividir nossa classe __CarroRaro__ de nossos exemplos anteriores para usar a segregação de interfaces da mesma forma. Implementando uma interface de um modelo de carro com uma unica marca.
+
+## Dependency Inversion (Inversão de dependência)
+
+__O princípio de inversão de dependência refere-e ao desacoplamento de módulos de software. Dessa forma, em vez de módulos de alto nível dependendo de módulos baixo nível, ambos dependerão de abstrações.__
+
+Para que uma classe dependa de uma abstração e não de uma implementação.
+
+Vamos exemplificar.
+
+```php
+class Email
+{
+    public function enviar($mensagem)
+    {
+        // ...
+    }
+}
+
+class Notificacao
+{
+    public function __construct()
+    {
+        $this->mensagem = new Email;
+    }
+
+    public function enviar($mensagem)
+    {
+        $this->mensagem->enviar($mensagem)
+    }
+}
+```
+
+Neste exemplo, temos o que chamamos de acoplamento e uma dependência da classe __Notificacao__ cria uma instancia da classe __Email__ dentro dela. E o método _enviar_ faz a utilização da classe __Email__ para enviar a notificação por e-mail. Isso fere o princípio da inversão da dependência, porque não desenvolvemos a classe __Notificacao__ para uma abstração, e sim para uma implementação já que a classe __Email__ implementa a lógica para o envio do e-mail.
+
+Vamos resolver isso.
+
+```php
+interface MensagemInterface
+{
+    public function enviar($mensagem);
+}
+
+class Email implements MensagemInterface
+{
+    public function enviar($mensagem)
+    {
+        //lógica
+    }
+}
+
+class Notificacao
+{
+    public __construct(MensagemInterface $mensagem)
+    {
+        $this->mensagem = $mensagem;
+    }
+
+    public function enviar($mensagem)
+    {
+        $this->mensagem->enviar($mensagem)
+    }
+}
+```
+
+Agora desacoplamos a classe __Email__ da classe __Notificacao__, estamos trabalhando com a abstração __MensagemInterface__, para __Notificacao__ não importa qual classe você está usando, e sim, que ela implemente a interface __MensagemInterface__ porque sabemos que ela vai ter o método enviar que precisamos. Isso também permite que a classe __Notificacao__ use outras classes que implementem a interface __MensagemInterface__.
+
+## Conclusão
+
+Com isso, esclarecemos as noções básicas para usar os princípios SOLID na sua aplicação. No mundo real, nem sempre conseguimos usar todos os princípios, eles são como guias para nos ajudar a escrever um código mais eficiente e organizado.
