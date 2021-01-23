@@ -6,15 +6,15 @@ Esses conceitos foram construidos posteriormente por __Michael Feathers__, quem 
 
 Seguindo esses 5 conceitos temos:
 
-- __S__ Single Responsibility
-- __O__ Open/Closed
-- __L__ Liskov Substituition
-- __I__ Interface Segregation
-- __D__ Dependency Inversion
+- [Single Responsibility](#s)
+- [Open/Closed](#o)
+- [Liskov Substituition](#l)
+- [Interface Segregation](#i)
+- [Dependency Inversion](#d)
 
 Vamos explicar a fundo e na prática usando diversos exemplos sobre cada um deles e o que eles significam.
 
-## Single Responsibility (Responsabilidade Única)
+<h2 id="s">Single Responsibility (Responsabilidade Única)</h2>
 
 Começando com o primeiro princípio do acrônimo, a responsabilidade única afirma que _uma classe deveria somente ter uma única responsabilidade_.
 
@@ -92,7 +92,7 @@ class PessoaAction extends Pessoa
 
 Podemos aproveitar essa nova classe criada adicionar todos os métodos (ações no caso) que a classe mãe pode requirir, assim na medida que o projeto crescer, será muito mais fácil identificar o que cada arquivo de classe deve fazer.
 
-## Open/Closed
+<h2 id="o">Open/Closed</h2>
 
 Simplificando esse princípio, _classes deveriam ser abertas para extensão, mas fechadas para modificação_. Ao fazer isso, paramos de modificar o código existente e causar novos bugs potenciais. Claro, a única exceção à regra é ao consertar bugs no código existente.
 
@@ -130,7 +130,7 @@ class CarroRaro extends Carro
 
 Por extender nossa classe __Carro__ podemos ter certeza que nosso projeto não será afetado.
 
-## Liskov Substitution
+<h2 id="l">Liskov Substitution</h2>
 
 O próximo da lista é __Liskov Substitution__, sem dúvidas é o princípio mais complexo dos outros 5. __Se uma classe A é um subtipo da classe B, então nos deveriamos ter capacidade para substituir B com A sem implicar no comportamento do nosso programa__.
 
@@ -189,7 +189,7 @@ Jogando um carro sem motor dentro de tudo, estamos mudando inerentemente o compo
 
 Uma possivel solução deveria ser trabalhar novamente nosso modelo dentro da interface que levam em consideração o estado sem motor do nosso carro.
 
-## Interface Segregation (Segregação de Interface)
+<h2 id="i">Interface Segregation (Segregação de Interface)</h2>
 
 O "I" em __SOLID__ refere-se a interface segregation, e significa que __interfaces maiores devem ser divididas em interfaces menores. Ao fazer isso, garantimos que a implementação de classes só precisam se preocupar apenas com métodos que são do interesse dela.__
 
@@ -254,7 +254,7 @@ class Generic implements GenericColocar, GenericGuardar
 
 Poderíamos até mesmo dividir nossa classe __CarroRaro__ de nossos exemplos anteriores para usar a segregação de interfaces da mesma forma. Implementando uma interface de um modelo de carro com uma unica marca.
 
-## Dependency Inversion (Inversão de dependência)
+<h2 id="d">Dependency Inversion (Inversão de dependência)</h2>
 
 __O princípio de inversão de dependência refere-e ao desacoplamento de módulos de software. Dessa forma, em vez de módulos de alto nível dependendo de módulos baixo nível, ambos dependerão de abstrações.__
 
