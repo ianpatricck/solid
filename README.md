@@ -322,3 +322,8 @@ Agora desacoplamos a classe __Email__ da classe __Notificacao__, estamos trabalh
 ## Conclusão
 
 Com isso, esclarecemos as noções básicas para usar os princípios SOLID na sua aplicação. No mundo real, nem sempre conseguimos usar todos os princípios, eles são como guias para nos ajudar a escrever um código mais eficiente e organizado.
+
+### Fontes
+
+- [A Solid Guide to SOLID Principles](https://www.baeldung.com/solid-principles)
+- [SOLID: The First 5 Principles of Object Oriented Design](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
