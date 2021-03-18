@@ -45,9 +45,9 @@ class Pessoa
     public function verificaMaioridade()
     {
         if ($this->idade < 18) {
-            echo "$this->nome é menor de idade";
+            echo "{$this->nome} é menor de idade";
         } else {
-            echo "$this->nome é maior de idade";
+            echo "{$this->nome} é maior de idade";
         }
     }
 
