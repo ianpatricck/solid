@@ -161,7 +161,7 @@ class Automovel implements Carro
         $this->motor->ligar();
     }
 
-    public funtion acelerar()
+    public function acelerar()
     {
         $this->motor->vel(1000);
     }
@@ -299,7 +299,7 @@ class Email implements MensagemInterface
 {
     public function enviar($mensagem)
     {
-        //lógica
+        // lógica
     }
 }
 
