@@ -1,5 +1,5 @@
 # SOLID em PT-BR
-## Este é um repositório para mostrar o funcionamento dos princípios SOLID e de como devemos escrever código com qualidade.
+## Este é um repositório para mostrar o funcionamento dos princípios SOLID.
 
 Esses principios foram concebidos pela primeira vez por __Robert C. Martin__ em seu artigo do ano 2000, [Design Principles and Design Patterns](https://fi.ort.edu.uy/innovaportal/file/2032/1/design_principles.pdf).
 Esses conceitos foram construidos posteriormente por __Michael Feathers__, quem nos introduziu o acrônimo SOLID.
