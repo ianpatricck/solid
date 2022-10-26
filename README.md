@@ -144,7 +144,7 @@ interface Carro
 }
 ```
 
-No código acima, definimos uma simples interface chamada __Carro__ com dois métodos que todos os carros deveriam cumprir, ligar o motor e acelerar.
+No código acima, definimos uma simples interface chamada __Carro__ com dois métodos que todos os carros deveriam cumprir: ligar o motor e acelerar.
 
 ```php
 class Automovel implements Carro
@@ -185,7 +185,7 @@ class CarroEletrico implements Carro
 }
 ```
 
-Jogando um carro sem motor dentro de tudo, estamos mudando inerentemente o comportamento do nosso programa. Esta é uma violação flagrante da __substituição de Liskov__ e é um pouco mais difícil de corrigir do que nossos 2 princípios anteriores.
+Jogando um carro sem motor dentro de tudo, estamos mudando inerentemente o comportamento do nosso programa. Esta é uma violação flagrante da __substituição de Liskov__ e é um pouco mais difícil de corrigir do que nossos dois princípios anteriores.
 
 Uma possivel solução deveria ser trabalhar novamente nosso modelo dentro da interface que levam em consideração o estado sem motor do nosso carro.
 
@@ -208,7 +208,7 @@ interface Generic
 
 É bem comum colocar-mos muitos métodos dentro de uma classe, mesmo que não usamos. Com isso nossa classe ficará muito grande e não temos escolha a não ser ir implementando novos métodos.
 
-Vamos consertar isso dividindo nossa longa interface em 3 interfaces separadas.
+Vamos consertar isso dividindo nossa longa interface em três interfaces separadas.
 
 ```php
 interface GenericColocar
@@ -285,7 +285,7 @@ class Notificacao
 }
 ```
 
-Neste exemplo, temos o que chamamos de acoplamento e uma dependência da classe __Notificacao__ cria uma instancia da classe __Email__ dentro dela. E o método _enviar_ faz a utilização da classe __Email__ para enviar a notificação por e-mail. Isso fere o princípio da inversão da dependência, porque não desenvolvemos a classe __Notificacao__ para uma abstração, e sim para uma implementação já que a classe __Email__ implementa a lógica para o envio do e-mail.
+Neste exemplo, temos o que chamamos de acoplamento e uma dependência da classe __Notificacao__ cria uma instância da classe __Email__ dentro dela. E o método _enviar_ faz a utilização da classe __Email__ para enviar a notificação por e-mail. Isso fere o princípio da inversão da dependência, porque não desenvolvemos a classe __Notificacao__ para uma abstração, e sim para uma implementação já que a classe __Email__ implementa a lógica para o envio do e-mail.
 
 Vamos resolver isso.
 
