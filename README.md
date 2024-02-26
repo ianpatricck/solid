@@ -305,7 +305,7 @@ class Email implements MensagemInterface
 
 class Notificacao
 {
-    public __construct(MensagemInterface $mensagem)
+    public function __construct(MensagemInterface $mensagem)
     {
         $this->mensagem = $mensagem;
     }
